@@ -2,25 +2,25 @@
 
 This is a project with three. js +vite +mmd models+vue3+TypeScript
 
-# 动画文件
+# Animation files
 
-Animation files ： move -- ayaka-dance.vmd
+动画文件 ： move -- ayaka-dance.vmd
 
-# 模型文件
+# Model file
 
-Model file ： ganyu -- 甘雨.pmx
+模型文件 ： ganyu -- 甘雨.pmx
 
-# three.js 说明网址
+# learn three.js
 
 See [https](https://www.wenjiangs.com/docs/three-js-docs).
 
-## Project Setup
+## install
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### run
 
 ```sh
 npm run dev
