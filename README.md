@@ -1,4 +1,4 @@
-# my-project
+# my-project 目前无法加载 vmd 格式文件
 
 This is a project with three. js +vite +mmd models+vue3+TypeScript
 
