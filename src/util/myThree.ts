@@ -12,9 +12,17 @@ export class AddModuel {
     private Camera: PerspectiveCamera
     public text: string
     constructor(scene: Scene, camera: PerspectiveCamera) {
+        //场景
         this.Scene = scene
+        //摄像头
         this.Camera = camera
     }
+
+    /**
+     * @description 加载模型如果存在动画则绑定动画
+     * @param modelUrl 模型路径 {string}
+     * @param animationurl 动作动画路径 {string}
+     */
     public loader(modelUrl: string, animationurl?: string) {
         if (modelUrl && modelUrl.length === 0) {
             return
@@ -41,14 +49,24 @@ export class AddModuel {
     private loaderMMD(modelUrl: string, animationurl?: string) {
         if (animationurl && animationurl.length > 0) {
             //模型动作动画
-            mmdLoad.loadWithAnimation(modelUrl, animationurl, function onLoad(mmd) {
-                //将动画绑定模型
-                mmdHelper.add(mmd.mesh, {
-                    animation: mmd.animation,
-                })
-                //将模型添加进场景
-                this.Scene.add(mmd.mesh)
-            })
+            mmdLoad.loadWithAnimation(
+                modelUrl,
+                animationurl,
+                function onLoad(mmd) {
+                    //将动画绑定模型
+                    mmdHelper.add(mmd.mesh, {
+                        animation: mmd.animation,
+                    })
+                    //将模型添加进场景
+                    this.Scene.add(mmd.mesh)
+                },
+                //当加载正在进行时被调用的函数
+                function onProgress(mmd) {},
+                //如果加载过程中发生错误时被调用的函数
+                function onError(mmd) {
+                    console.log('🚀 ~ file: myThree.ts:62 ~ AddModuel ~ onLoad ~ mmd:', mmd)
+                }
+            )
             //镜头动画
             //      mmdLoad.loadAnimation(
             //          '/public/move/ayaka-camera.vmd',

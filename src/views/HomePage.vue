@@ -17,7 +17,7 @@ const scene = new THREE.Scene();
 const addModuel = new AddModuel(scene, camera);
 //加载外部mmd模型方法
 // /public/move/ayaka-dance.vmd
-addModuel.loader('/public/ganyu/甘雨.pmx')
+addModuel.loader('/public/ganyu/甘雨.pmx', '/public/move/ayaka-dance.vmd')
 //设置相机位置
 camera.position.set(0, 50, 50);
 //设置相机方向
