@@ -2,6 +2,10 @@
 
 This is a project with three. js +vite +mmd models+vue3+TypeScript
 
+# React Example
+
+See [https](https://www.jianshu.com/p/ecf61deea300).
+
 # Animation files
 
 动画文件 ： move -- ayaka-dance.vmd
