@@ -53,12 +53,14 @@ export class AddModuel {
                 modelUrl,
                 animationurl,
                 function onLoad(mmd) {
+                    const { mesh } = mmd
                     //将动画绑定模型
-                    mmdHelper.add(mmd.mesh, {
+                    mmdHelper.add(mesh, {
                         animation: mmd.animation,
+                        physics: true,
                     })
                     //将模型添加进场景
-                    this.Scene.add(mmd.mesh)
+                    this.Scene.add(mesh)
                 },
                 //当加载正在进行时被调用的函数
                 function onProgress(mmd) {},
